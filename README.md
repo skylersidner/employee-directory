@@ -25,3 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## TODO:
+
+* Update README.md with better instructions, particularly for deployment
+* Extract employees to a module for lazy loading
+* Add a route resolver for data from the API
+* Create employees stub data
+* Hook up employees CRUD to the API:
+  * List
+  * Add
+  * Edit
+  * Remove 
+* Improve menu styling
