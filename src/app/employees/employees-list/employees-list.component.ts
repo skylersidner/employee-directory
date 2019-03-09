@@ -7,6 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeesListComponent implements OnInit {
 
+  public employeesStub = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+      dateAdded: new Date(),
+      title: 'The Poobah'
+    },
+    {
+      firstName: 'Tom',
+      lastName: 'Cruise',
+      dateAdded: new Date(),
+      title: 'The Master'
+    },
+    {
+      firstName: 'Jeffrey',
+      lastName: 'Lebowski',
+      dateAdded: new Date(),
+      title: 'The Dude'
+    }
+  ];
   constructor() { }
 
   ngOnInit() {

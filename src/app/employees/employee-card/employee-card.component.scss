@@ -1,0 +1,28 @@
+.card-container {
+  border: 3px solid black;
+  border-radius: 5px;
+  width: 30%;
+  margin-top: 8px;
+
+  .avatar {
+    float: left;
+    margin: 8px;
+
+    i {
+
+    }
+  }
+
+  .info {
+    float: left;
+    margin: 8px;
+
+    label {
+      font-weight: bold;
+    }
+  }
+
+  .float-clear {
+    clear: both;
+  }
+}
