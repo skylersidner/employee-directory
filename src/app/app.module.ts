@@ -7,12 +7,14 @@ import { EmployeesComponent } from './employees/employees.component';
 import { MenuComponent } from './menu/menu.component';
 import { MatButtonModule, MatMenuModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EmployeesListComponent } from './employees/employees-list/employees-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeesComponent,
-    MenuComponent
+    MenuComponent,
+    EmployeesListComponent
   ],
   imports: [
     BrowserModule,
