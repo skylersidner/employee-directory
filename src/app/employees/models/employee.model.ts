@@ -4,4 +4,5 @@ export class EmployeeModel {
   lastName: string;
   dateAdded: Date;
   title: string;
+  id: string;
 }

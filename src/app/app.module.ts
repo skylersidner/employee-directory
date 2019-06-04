@@ -9,6 +9,7 @@ import { MatButtonModule, MatMenuModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EmployeesListComponent } from './employees/employees-list/employees-list.component';
 import { EmployeeCardComponent } from './employees/employee-card/employee-card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EmployeeCardComponent } from './employees/employee-card/employee-card.c
     AppRoutingModule,
     MatButtonModule,
     MatMenuModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

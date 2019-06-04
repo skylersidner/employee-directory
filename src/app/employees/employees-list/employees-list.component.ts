@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeModel } from '../models/employee.model';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-employees-list',
@@ -7,29 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeesListComponent implements OnInit {
 
-  public employeesStub = [
-    {
-      firstName: 'John',
-      lastName: 'Doe',
-      dateAdded: new Date(),
-      title: 'The Poobah'
-    },
-    {
-      firstName: 'Tom',
-      lastName: 'Cruise',
-      dateAdded: new Date(),
-      title: 'The Master'
-    },
-    {
-      firstName: 'Jeffrey',
-      lastName: 'Lebowski',
-      dateAdded: new Date(),
-      title: 'The Dude'
-    }
-  ];
-  constructor() { }
+  public employees: EmployeeModel[];
+
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
+    //TODO: move this into a route resolver
+    this.employeeService.getEmployees();
+    this.employeeService.employees.subscribe(employees => {
+      this.employees = employees;
+    });
   }
 
 }
