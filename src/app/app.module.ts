@@ -5,11 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { MenuComponent } from './menu/menu.component';
-import { MatButtonModule, MatMenuModule } from '@angular/material';
+import { MatButtonModule, MatFormField, MatInputModule, MatMenuModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EmployeesListComponent } from './employees/employees-list/employees-list.component';
 import { EmployeeCardComponent } from './employees/employee-card/employee-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EmployeeCreateComponent } from './employees/employee-create/employee-create.component';
+import { EmployeeFormComponent } from './employees/employee-form/employee-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     EmployeesComponent,
     MenuComponent,
     EmployeesListComponent,
-    EmployeeCardComponent
+    EmployeeCardComponent,
+    EmployeeCreateComponent,
+    EmployeeFormComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatMenuModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

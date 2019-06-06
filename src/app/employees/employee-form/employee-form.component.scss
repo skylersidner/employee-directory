@@ -1,0 +1,19 @@
+.employee-input-form-wrapper {
+  margin: 8px;
+}
+
+.employee-input-form {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+
+  mat-form-field {
+    &:not(:first-child) {
+      margin-top: 8px;
+    }
+  }
+
+  button.submit-button {
+    margin-top: 8px;
+  }
+}

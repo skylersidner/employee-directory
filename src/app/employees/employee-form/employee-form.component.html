@@ -1,0 +1,25 @@
+
+<div class="employee-input-form-wrapper">
+  <form [formGroup]="employeeInputForm" (ngSubmit)="onSubmit(employeeInputForm)" class="employee-input-form">
+    <mat-form-field>
+      <input matInput type="text" placeholder="First Name" [formControl]="firstNameFC">
+      <mat-error *ngIf="firstNameFC.hasError('required')">
+        First Name is required.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Last Name" [formControl]="lastNameFC">
+      <mat-error *ngIf="lastNameFC.hasError('required')">
+        Last Name is required.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Title" [formControl]="titleFC">
+      <mat-error *ngIf="titleFC.hasError('required')">
+        Title is required.
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button type="submit" class="submit-button">Create!</button>
+  </form>
+</div>

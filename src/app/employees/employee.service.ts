@@ -7,7 +7,7 @@ const employeesStub = [
   {
     firstName: 'John',
     lastName: 'Doe',
-    dateAdded: new Date(),
+    dateAdded: new Date().getTime(),
     title: 'The Poobah',
     imageUrl: '',
     id: '1'
@@ -15,16 +15,16 @@ const employeesStub = [
   {
     firstName: 'Tom',
     lastName: 'Cruise',
-    dateAdded: new Date(),
-    title: 'The Master',
+    dateAdded: new Date().getTime(),
+    title: 'The Hunk',
     imageUrl: '',
     id: '2'
   },
   {
-    firstName: 'Jeffrey',
-    lastName: 'Lebowski',
-    dateAdded: new Date(),
-    title: 'The Dude',
+    firstName: 'Darth',
+    lastName: 'Vader',
+    dateAdded: new Date().getTime(),
+    title: 'The Father',
     imageUrl: '',
     id: '3'
   }
