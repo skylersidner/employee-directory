@@ -1,3 +1,5 @@
-<div *ngFor="let employee of employees">
-  <app-employee-card [employee]="employee"></app-employee-card>
+<div class="employee-list-wrapper">
+  <ng-container *ngFor="let employee of employees">
+    <app-employee-card [employee]="employee" class="employee-card-container"></app-employee-card>
+  </ng-container>
 </div>

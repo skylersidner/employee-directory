@@ -36,13 +36,17 @@ const employeesStub = [
 export class EmployeeService {
 
   private baseUrl = 'http://localhost:3000'; //TODO: move this to a config variable
-  private employeeUrl = '/employees';
+  private employeeUrl = `${this.baseUrl}/employees`;
 
   public employees: Observable<EmployeeModel[]>;
 
   constructor(private http: HttpClient) { }
 
-  public getEmployees() {
-    this.employees = this.http.get<EmployeeModel[]>(`${this.baseUrl}${this.employeeUrl}`);
+  public getEmployees(): void {
+    this.employees = this.http.get<EmployeeModel[]>(this.employeeUrl);
+  }
+
+  public createEmployee(employee: EmployeeModel) {
+    return this.http.post<EmployeeModel>(this.employeeUrl, employee);
   }
 }
