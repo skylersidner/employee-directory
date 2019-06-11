@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeModel } from '../models/employee.model';
-import { EmployeeService } from '../employee.service';
+import { EmployeeService } from '../services/employee.service';
 
 @Component({
   selector: 'app-employees-list',
@@ -15,8 +15,8 @@ export class EmployeesListComponent implements OnInit {
 
   ngOnInit() {
     //TODO: move this into a route resolver
-    this.employeeService.getEmployees();
-    this.employeeService.employees.subscribe(employees => {
+    this.employeeService.getEmployees().subscribe(employees => {
+      console.log('employees: ', employees);
       this.employees = employees;
     });
   }

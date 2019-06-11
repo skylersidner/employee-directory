@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { EmployeeModel } from './models/employee.model';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { EmployeeModel } from '../models/employee.model';
+import { switchMap } from 'rxjs/operators';
 
+// TODO: set this up for a configuration variable to trigger local data use; probably a shared service?
 const employeesStub = [
   {
     firstName: 'John',
@@ -35,18 +37,24 @@ const employeesStub = [
 })
 export class EmployeeService {
 
-  private baseUrl = 'http://localhost:3000'; //TODO: move this to a config variable
+  private baseUrl = 'http://localhost:3000'; // TODO: move this to a config variable
   private employeeUrl = `${this.baseUrl}/employees`;
-
-  public employees: Observable<EmployeeModel[]>;
 
   constructor(private http: HttpClient) { }
 
-  public getEmployees(): void {
-    this.employees = this.http.get<EmployeeModel[]>(this.employeeUrl);
+  public getEmployees(): Observable<EmployeeModel[]> {
+    return this.http.get<EmployeeModel[]>(this.employeeUrl);
+  }
+
+  public getEmployee(id: string) {
+    return this.http.get<EmployeeModel>(`${this.employeeUrl}/${id}`);
   }
 
   public createEmployee(employee: EmployeeModel) {
     return this.http.post<EmployeeModel>(this.employeeUrl, employee);
+  }
+
+  public updateEmployee(employee: EmployeeModel) {
+    return this.http.put<EmployeeModel>(`${this.employeeUrl}/${employee.id}`, employee);
   }
 }

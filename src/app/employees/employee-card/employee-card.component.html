@@ -1,4 +1,5 @@
 <div class="employee-card">
+  <a [routerLink]="['..', employee.id, 'edit']">Edit</a>
   <div class="avatar">
     <div *ngIf="employee.imageUrl">
       <img [src]="employee.imageUrl" />

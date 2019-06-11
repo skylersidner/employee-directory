@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EmployeesListComponent } from './employees/employees-list/employees-list.component';
 import { EmployeeCardComponent } from './employees/employee-card/employee-card.component';
 import { HttpClientModule } from '@angular/common/http';
-import { EmployeeCreateComponent } from './employees/employee-create/employee-create.component';
+import { EmployeeAddEditComponent } from './employees/employee-add-edit/employee-add-edit.component';
 import { EmployeeFormComponent } from './employees/employee-form/employee-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -21,7 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MenuComponent,
     EmployeesListComponent,
     EmployeeCardComponent,
-    EmployeeCreateComponent,
+    EmployeeAddEditComponent,
     EmployeeFormComponent
   ],
   imports: [
