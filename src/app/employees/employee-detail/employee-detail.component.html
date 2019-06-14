@@ -1,0 +1,12 @@
+<div>
+  <mat-card>
+    <mat-card-header>
+      <app-employee-avatar></app-employee-avatar>
+      <mat-card-title>{{ employee.getFullName() }}</mat-card-title>
+      <mat-card-subtitle>{{ employee.title }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div>Date Added: {{ employee.dateAdded | date: 'full' }}</div>
+    </mat-card-content>
+  </mat-card>
+</div>

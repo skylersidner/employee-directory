@@ -1,17 +1,12 @@
-<div class="employee-card">
-  <a [routerLink]="['..', employee.id, 'edit']">Edit</a>
-  <div class="avatar">
-    <div *ngIf="employee.imageUrl">
-      <img [src]="employee.imageUrl" />
+<a [routerLink]="['/employees/', employee.id]">
+  <div class="employee-card">
+    <a [routerLink]="['..', employee.id, 'edit']">Edit</a>
+    <app-employee-avatar [imageUrl]="employee.imageUrl"></app-employee-avatar>
+    <div class="info">
+      <div><label>Name:</label> {{ employee.firstName }} {{ employee.lastName }}</div>
+      <div><label>Title:</label> {{ employee.title }}</div>
+      <div><label>Date Added:</label> {{ employee.dateAdded | date }}</div>
     </div>
-    <div *ngIf="!employee.imageUrl">
-      <i class="fas fa-user fa-4x" aria-hidden="true"></i>
-    </div>
+    <div class="float-clear"></div>
   </div>
-  <div class="info">
-    <div><label>Name:</label> {{ employee.firstName }} {{ employee.lastName }}</div>
-    <div><label>Title:</label> {{ employee.title }}</div>
-    <div><label>Date Added:</label> {{ employee.dateAdded | date }}</div>
-  </div>
-  <div class="float-clear"></div>
-</div>
+</a>

@@ -41,7 +41,7 @@ export class EmployeeFormComponent implements OnInit {
       // TODO: add error handling for these
       if (this.action === 'Create') {
         this.employeeService.createEmployee(form.value).subscribe(response => this.router.navigate(['employees/list']));
-      } else { // TODO: navigate to employee view instead
+      } else { // TODO: navigate to employee-detail view instead
         const updatedEmployee = Object.assign({}, this.employee, form.value);
         this.employeeService.updateEmployee(updatedEmployee).subscribe(response => this.router.navigate(['employees/list']));
       }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { EmployeeModel } from '../models/employee.model';
-import { switchMap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 
 // TODO: set this up for a configuration variable to trigger local data use; probably a shared service?
 const employeesStub = [
@@ -43,11 +43,21 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   public getEmployees(): Observable<EmployeeModel[]> {
-    return this.http.get<EmployeeModel[]>(this.employeeUrl);
+    return this.http.get<EmployeeModel[]>(this.employeeUrl).pipe(
+      map((result: EmployeeModel[]) => {
+        return result.map((employeeJson: EmployeeModel) => {
+          return new EmployeeModel(employeeJson);
+        });
+      })
+    );
   }
 
   public getEmployee(id: string) {
-    return this.http.get<EmployeeModel>(`${this.employeeUrl}/${id}`);
+    return this.http.get<EmployeeModel>(`${this.employeeUrl}/${id}`).pipe(
+      map((employeeJson: EmployeeModel) => {
+        return new EmployeeModel(employeeJson);
+      })
+    );
   }
 
   public createEmployee(employee: EmployeeModel) {
