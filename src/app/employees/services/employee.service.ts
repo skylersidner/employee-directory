@@ -45,26 +45,30 @@ export class EmployeeService {
   public getEmployees(): Observable<EmployeeModel[]> {
     return this.http.get<EmployeeModel[]>(this.employeeUrl).pipe(
       map((result: EmployeeModel[]) => {
-        return result.map((employeeJson: EmployeeModel) => {
-          return new EmployeeModel(employeeJson);
-        });
+        return result.map(this.mapEmployee);
       })
     );
   }
 
   public getEmployee(id: string) {
     return this.http.get<EmployeeModel>(`${this.employeeUrl}/${id}`).pipe(
-      map((employeeJson: EmployeeModel) => {
-        return new EmployeeModel(employeeJson);
-      })
+      map(this.mapEmployee)
     );
   }
 
   public createEmployee(employee: EmployeeModel) {
-    return this.http.post<EmployeeModel>(this.employeeUrl, employee);
+    return this.http.post<EmployeeModel>(this.employeeUrl, employee).pipe(
+      map(this.mapEmployee)
+    );
   }
 
   public updateEmployee(employee: EmployeeModel) {
-    return this.http.put<EmployeeModel>(`${this.employeeUrl}/${employee.id}`, employee);
+    return this.http.put<EmployeeModel>(`${this.employeeUrl}/${employee.id}`, employee).pipe(
+      map(this.mapEmployee)
+    );
+  }
+
+  private mapEmployee(employeeJson: object) {
+    return new EmployeeModel(employeeJson);
   }
 }
