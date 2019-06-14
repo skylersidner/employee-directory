@@ -14,8 +14,8 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'list', pathMatch: 'full' },
       { path: 'list', component: EmployeesListComponent },
-      { path: ':id', component: EmployeeDetailComponent, resolve: { employee: EmployeeDataResolverService } },
       { path: 'add', component: EmployeeAddEditComponent },
+      { path: ':id', component: EmployeeDetailComponent, resolve: { employee: EmployeeDataResolverService } },
       { path: ':id/edit', component: EmployeeAddEditComponent, resolve: { employee: EmployeeDataResolverService } }
     ]
   }
