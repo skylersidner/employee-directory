@@ -1,6 +1,5 @@
 <a [routerLink]="['/employees/', employee.id]">
   <div class="employee-card">
-    <a [routerLink]="['..', employee.id, 'edit']">Edit</a>
     <app-employee-avatar [imageUrl]="employee.imageUrl"></app-employee-avatar>
     <div class="info">
       <div><label>Name:</label> {{ employee.firstName }} {{ employee.lastName }}</div>
